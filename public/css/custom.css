@@ -1,0 +1,144 @@
+.form-container .form-horizontal {
+    max-width: 480px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+.userid.text-center img {
+    top: 10px;
+}
+button.login1 {
+    font-size: 15px;
+    border: none;
+}
+button.register1 {
+    font-size: 15px;
+    border: none;
+}
+a:focus, a:hover {
+    color: none !important;
+    text-decoration: none !important;
+}
+.form-horizontal .form-control {
+    padding: 12px 20px;
+}
+#id-right ul.link-menu.top-sp.hide-mobile li {
+    display: inline-flex !important;
+}
+div#ball_right ul li {
+    display: inline-flex;
+    padding: 10px 10px;
+}
+#menu-block ul.offcanvas-menu-link li {
+    display: block !important;
+}
+#btndegin a#trip-post-button {
+    text-decoration: none;
+}
+img#swapButton {
+    width: 30px;
+    margin-top: 15px;
+}
+div#text-ara textarea {
+    background: #ececec;
+    border-radius: 15px;
+    border: none;
+    color: #565a5c;
+    height: 200px;
+}
+div#desh-two1 img {
+    width: 20px;
+    margin: 0px 5px 0px 3px;
+}
+@media(max-width:1466px){
+    .vehicle {
+    position: relative;
+    border: 1px solid #dfdbdb;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    float: right;
+}
+}
+
+@media(max-width:991px){
+#deshboard img.img-responsive.img-circle {
+    width: 16%;
+    border-radius: 100px;
+    height: auto;
+    margin-bottom: 16px;
+}
+}
+@media(min-width:1460px){
+    #fromclass {
+    left: 20%;
+    top:9%;
+}
+}
+/* password reset start */
+#reset-password button.btn.signin {
+    width: 100%;
+    max-width: 200px;
+}
+#reset-password h3{
+    font-weight: 600;
+    padding:20px 0px 0px 0px;
+    margin:0;
+}
+#reset-password h6{
+    font-weight: 400;
+    padding:20px 0px;
+    margin:0;
+    font-size: 18px;
+}
+
+.btn.signin.bgcolor{
+    background-color:#ff4e01;
+}
+#reset-password label{
+    font-size:18px;
+    font-weight: 500;
+    }
+        #reset-password strong{
+        font-weight: 600;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+    #reset-password p{
+        font-weight: 500;
+        font-size: 16px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .text-post.clr {
+    color: #000 !important;
+}
+h6.clr {
+    color: #000 !important;
+}
+
+a.clr {
+    color: #000 !important;
+}
+#desh-two1 #vehicle_get img{
+    max-width:unset !important;
+        width: 100% !important;
+}
+#desh-two1 #vehicle_get{
+    float: none;
+}
+#vehicle-id #vehicle_get {
+    width: 100%;
+}
+#vehicle_get{
+    max-width:unset !important;
+    width:100%;
+}
+#nuser img
+{
+    max-width: 100px;
+    width: 110px !important;
+    height: 110px;
+    border-radius: 100px;
+}
+    
