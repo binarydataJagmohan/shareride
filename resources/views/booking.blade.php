@@ -8,6 +8,14 @@
     a#book_trip {
     text-align: center;
 }
+.rating
+{
+  margin-top: 10px ;
+}
+.fa-star:before {
+    content: "\f005";
+    color: #ffc107!important;
+}
 </style>
         <section>
          @php 
@@ -21,6 +29,37 @@
                 <img src="{{asset('public/'.$user->img)}}" alt="" class="img-responsive img-circle1">
                 @else
                 <img src="{{asset('public/upload/no.jpg')}}" alt="" class="img-responsive img-circle1">
+                @endif
+                </div>
+
+                <div class="col-sm-3 col-3">
+                    <h6>Hi {{$user->name ?? ''}}&nbsp{{$user->last_name ?? ''}}</h6>
+                    <p class="m-0">Welcome to ShareRide!</p>
+                    <div class="mb-3">
+                    @php 
+                    $review = DB::table('review_table')->where('review_to', $user->id)->orderBy('id', 'desc')->first();
+                    @endphp
+
+                    @if ($review)
+                    @if ($review->user_rating > 0)
+                    @foreach (range(1, $review->avg_rating) as $i)
+                    <i class="fas fa-star star-solid mr-1 main_star"></i>
+                    @endforeach
+                    @else
+                    <p>No Rating yet</p>
+                    @endif
+                    @else
+                   <p>No reviews yet</p>
+                   @endif
+
+                 </div>
+                </div>
+               @if (DB::table('review_table')->where('review_by', auth()->id())->where('review_to', $user->id)->exists())
+               <p>You have already given a rating.</p>
+                @else
+                <a href="{{ route('review', $user->id) }}">
+                  <div class="rating">Rating</div>
+                   </a>
                 @endif
                    
                 </div>

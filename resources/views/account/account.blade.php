@@ -18,6 +18,7 @@
     color: black;
     display: block !important;
 }
+    input#acc {
     input#first_acc {
     padding: 20px 15px 20px 20px;
 
@@ -61,18 +62,21 @@
                </div>
           </div>
           <hr class="hr-line">
+           <form method="post" action="{{ url('update-account') }}">
            <form method="post" action="{{ url('update-account') }}" id="accform">
             @csrf
            <div class="col-md-4 position-relative location">
             <label for="">First Name</label>
             
             <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="" data-bs-toggle="modal"
+              data-bs-target="#exampleModal4" id="acc">
               data-bs-target="#exampleModal4" id="first_acc" required maxlength="21">
               <div id="error-message" style="color: red;"></div>
           </div>
           <div class="col-md-4 position-relative location">
             <label for="">Last Name</label>
             <input type="text" name="last_name" value="{{ $user->last_name }}" class="form-control" placeholder="" data-bs-toggle="modal"
+              data-bs-target="#exampleModal4" id="acc">
               data-bs-target="#exampleModal4" id="last_acc"  required maxlength="21">
               <div id="error-message1" style="color: red;"></div>
           </div>
@@ -116,6 +120,8 @@
           <div class="col-sm-10">
             <label for="">Description</label>
             <div class="form-floating">
+              <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea">{{ $user->description }}</textarea>
+              
               <textarea class="form-control"  name="description" placeholder="Leave a comment here" id="floatingTextarea" maxlength="100">{{ $user->description }}</textarea>
               <div id="error-message2" style="color: red;"></div>
             </div>
@@ -159,6 +165,11 @@
       </div>
       <form method="post" action="{{url('update-phone')}}">
           @csrf
+      <div class="modal-body" style="padding: 18px;">
+        <p>Please enter your phone number with a valid country code</p>
+        <div class="row mt-5 mb-5">
+          <div class="col-sm-6">
+            <input type="number" name="number" value="{{ $user->mobile_no ?? "" }}" class="form-control" placeholder="3655646565846">
       <div class="modal-body" style="padding: 18px;" id="accform">
         <p>Please enter your phone number with a valid country code</p>
         <div class="row mt-5 mb-5">
@@ -177,6 +188,8 @@
 </div>
   
 </section>
+
+ <script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 

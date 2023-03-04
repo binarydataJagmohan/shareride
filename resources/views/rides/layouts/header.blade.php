@@ -49,6 +49,9 @@ ul.ul-width li a {
     border-bottom-color: #fff;
     border-width: 15px;
 }
+ul.link-menu.position-relative {
+    margin-left: 120px;
+}
 /*ul.link-menu.position-relative {*/
 /*    margin-left: 120px;*/
 /*}*/

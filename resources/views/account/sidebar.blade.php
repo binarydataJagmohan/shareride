@@ -11,6 +11,8 @@
 
        <div class="tab-group-title">Money</div>
        <ul class="left-dash-menu"> 
+         <li><a href="#">Payment settings</a></li>
+         <li><a href="#">Payout settings</a></li>
          <li><a href="{{url('/payment-setting')}}">Payment settings</a></li>
          <li><a href="{{url('/payouts-setting')}}">Payout settings</a></li>
        </ul>

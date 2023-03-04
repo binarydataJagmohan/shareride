@@ -161,6 +161,28 @@
                         </div>
                         <hr>
 
+                        <div class="payment_mothod">
+                            <h3>Payment method</h3>
+                            <div class="col-md-6 text-start slect-change">
+                                <label for="" class="mb-3 mt-3">Name on card</label>
+                                <input class="form-control" name="card_name" placeholder="Sunil" value="{{ $user->name ?? '' }} {{$user->last_name ?? ''}}">
+                            </div>
+                            <div class="card-stye mt-3 mb-3">
+                                <input id="cc" type="number" name="card_number" placeholder="XXXX XXXX XXXX XXXX"
+                                style="    width: 200px;
+                                background: transparent;
+                                border: none;">
+                                <input id="cc" type="text" name="exp_date" placeholder="MM/YY"
+                                style="    width: 200px;
+                                background: transparent;
+                                border: none;">
+                              <input id="cvv" name="cvv" type="number" placeholder="CVC" style="width: 130px;
+                              background: transparent;
+                              border: none;
+                              color:#565a5c;">
+                             </div>
+                            <div class="form-check mt-4" id="cheak">
+                                <input class="form-check-input" name="" type="checkbox" value="" id="flexCheckDefault">
                          <div class="payment_mothod">
                             <h3>Payment method</h3>
                             <div class="col-md-6 text-start slect-change">

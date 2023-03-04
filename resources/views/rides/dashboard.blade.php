@@ -22,6 +22,9 @@
       <div class="col-sm-2">
          <a href="{{asset('account')}}">
         @if(Auth::user()->img != null || '')
+        <img src="{{asset('public/'.Auth::user()->img)}}" alt="" class="img-responsive img-circle">
+        @else
+        <img src="{{asset('public/upload/no.jpg')}}" alt="" class="img-responsive img-circle">
         <img src="{{asset('public/'.Auth::user()->img)}}" alt="" class="img-responsive img-circle" id="res-image">
         @else
         <img src="{{asset('public/upload/no.jpg')}}" alt="" class="img-responsive img-circle" id="res-image">
@@ -33,6 +36,31 @@
           <h1>Hi {{ Auth::user()->name }},</h1>
           <h6 class="m-0">Welcome to Shareride!</h6>
         </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="mt-5 d-none d-md-block">
+              <img style="width: unset;" src="https://cdn.poparide.com/static/pop/webui/common/images/stats/km_shared.a41f811cf5df.svg" alt="" class="img-responsive">
+              <span>No km shared, yet</span>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="mt-5 d-none d-md-block">
+              <img style="width: unset;" src="https://cdn.poparide.com/static/pop/webui/common/images/stats/rides_taken.f3d74a40610f.svg" alt="" class="img-responsive">
+              <span>No activity, yet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-10">
+        <div class="mt-4" id="btndegin">
+          <a href="" class="button darkgrey" id="trip-post-button" data-bs-toggle="offcanvas" data-bs-target="#getstrated" aria-controls="getstrated">Get started</a>
+        </div>
+      </div>
+    </div>
         <!--<div class="row">-->
         <!--  <div class="col-sm-3">-->
         <!--    <div class="mt-5 d-none d-md-block">-->
