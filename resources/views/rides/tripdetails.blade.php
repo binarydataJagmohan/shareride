@@ -5,6 +5,12 @@
 @section('title','ShareRide From')
 @section('content')
 <style>
+/*    div#hide {
+    display: none;
+}*/
+/*#dataContainer{
+    display: none;
+}*/
 /*    div#hide {*/
 /*    display: none;*/
 /*}*/
@@ -64,11 +70,13 @@
                         <p class="mb-3">"{{$trips[0]->description}}"</p>
                          <a href="{{url('edit?#text-ara',$trips[0]->id)}}">Edit description</a>
                          <br>
+                          <!-- <a href="#" class="button-reveal-more-info" id="show_less">Less details</a> -->
                           <!--<a href="#" class="button-reveal-more-info" id="show_less">Less details</a>-->
                     </div>
                 </div>
             </div>
             
+              <!-- <a href="#" class="button-reveal-more-info" id="show_more">More details</a> -->
               <!--<a href="#" class="button-reveal-more-info" id="show_more">More details</a>-->
             </div>
             
@@ -307,6 +315,7 @@
       referrerpolicy="no-referrer-when-downgrade">
       </iframe>
   </div>
+<!--  <script>
  <script>
        $(document).ready(function() {
         $('#show_more').click(function() {
@@ -322,6 +331,7 @@
              $('#show_more').show();
         });
     });
+ </script> -->
  </script>
 
 

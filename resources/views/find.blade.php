@@ -8,6 +8,7 @@
   }
 
   i.fa-solid.fa-location-dot {
+    font-size: 22px;
     font-size: 20px;
   }
 
@@ -27,6 +28,10 @@
   #input-container>input {
     padding-left: 40px;
   }
+  .fa-star:before {
+    content: "\f005";
+    color: #ffc107!important;
+}
   .location .form-control{
       padding:15px 25px !important
   }
@@ -35,6 +40,10 @@
     <div class="container position-relative">
     <form class="row g-3" id="fromclass" method="post" action="{{url('find-trip')}}">
       @csrf
+      <div class="col-md-3 mt-lg-0 ">
+        <div class="position-relative location">
+         <!--  <i class="fa-solid fa-location-dot"></i> -->
+         <i class="fa-solid fa-location-dot" style="top:unset !important;margin-top: 20px;"></i>
       <div class="col-md-3 mt-lg-0 text-center">
         <div class="position-relative location">
          <!--  <i class="fa-solid fa-location-dot"></i> -->
@@ -46,6 +55,10 @@
       <div class="col-md-1 mt-lg-0 text-lg-center">
         <img src="{{asset('public/images/rute.png')}}" alt="" id="swapButton" />
       </div>
+      <div class="col-md-3 mt-lg-0 ">
+        <div class="position-relative location">
+          <i class="fa-solid fa-location-dot" style="top:unset !important;margin-top: 20px;"></i>
+          <input type="text" class="form-control" placeholder="To" value="{{$destination->name ?? ''}}" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#addDestination" readonly  id="input2" required/>
       <div class="col-md-3 mt-lg-0 text-center">
         <div class="position-relative location">
           <i class="fa-solid fa-location-dot" style="top:unset !important;;margin: 15px -19px 10px;"></i>
@@ -93,6 +106,23 @@
                      @if($user != null || '')
                   <h6 class="mt-3">{{$user->name}}&nbsp{{$user->last_name}}</h6>
                      @endif
+                   <div class="mb-3">
+                    @php 
+                    $review = DB::table('review_table')->where('review_to', $user->id)->orderBy('id', 'desc')->first();
+                    @endphp
+
+                    @if ($review)
+                    @if ($review->user_rating > 0)
+                    @foreach (range(1, $review->avg_rating) as $i)
+                    <i class="fas fa-star star-solid mr-1 main_star"></i>
+                    @endforeach
+                    @else
+                    <p>No Rating yet</p>
+                    @endif
+                    @else
+                   <p>No reviews yet</p>
+                   @endif
+                 </div>
                   <p>No ratings, yet</p>
                 </div>
               </div>
@@ -251,6 +281,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 <script>
+
   $.ajaxSetup({
       headers: {
         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')

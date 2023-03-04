@@ -22,6 +22,10 @@
                           <a href="">
                             <h5>{{$ub->origin}} to {{$ub->destination}}</h5>
                           </a>
+                          <i></i><br>
+                          
+                          <strong>{{\Carbon\Carbon::parse($ub->start_date)->format('l , F d \a\t ')}} {{\Carbon\Carbon::parse($ub->start_time)->format('H:i')}}</strong>
+                          <hr>
                          
                           <strong>{{\Carbon\Carbon::parse($ub->start_date)->format('l , F d \a\t ')}} {{\Carbon\Carbon::parse($ub->start_time)->format('H:i')}}</strong>
                           <hr>
@@ -41,6 +45,9 @@
                         <div class="col-md-6">
                         
                          
+                          <p><i></i></p>
+                          
+                          <p><i></i></p>
                           
                           
 

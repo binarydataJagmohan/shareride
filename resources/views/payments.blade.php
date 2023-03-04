@@ -9,6 +9,7 @@
                                 <h1 class="mb-5">Payments</h1>
                             </div>
                             <div class="col-sm-6 text-lg-end">
+                                <p style="text-decoration:underline ;color: #777777;"> <a href="#"><b>Payment settings </b></a> | <a href="#"><b>Payments help</b></a> </p>
                                 <p style="text-decoration:underline ;color: #777777;"> <a href="{{url('payment-setting')}}"><b>Payment settings </b></a> | <a href="#"><b>Payments help</b></a> </p>
                             </div>
                         </div>
@@ -43,4 +44,5 @@
                 </div>
     </section>
 
+@endsection
 @endsection

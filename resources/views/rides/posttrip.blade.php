@@ -148,6 +148,8 @@
             <div class="p-3" id="tab-commn">
               <nav>
                 <div class="nav mb-3" id="" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">One-time trip</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Recurring trip</button>
                   <button class="nav-link active" id="nav-home-tabs" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">One-time trip</button>
                   <!--<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Recurring trip</button>-->
                 </div>
@@ -727,6 +729,10 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
+
+ 
+
+
 <script>
   $(document).ready(function() {
     $.ajaxSetup({
@@ -896,6 +902,10 @@
   });
 </script>
 <script>
+
+
+
+
 
 $(document).ready(function() {
 

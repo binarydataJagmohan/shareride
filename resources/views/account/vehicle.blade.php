@@ -1,3 +1,4 @@
+
 @extends('rides.layouts.app')
 @section('title','Dashboard')
 @section('content')
@@ -29,6 +30,12 @@
                   <div class="row">
                     <div class="col-sm-6">
                         <span class="btn btn-dark" style="padding: 2px 8px; font-size: 11px; border-radius:20px;">Primary vehicle</span>
+                    </div>
+                    <div class="col-sm-6">
+                       <div class="d-flex justify-content-end">
+                        <a href="{{ url('edit-vehicle') }}" style="font-size: 12px; color:rgb(26, 24, 24);">Edit</a>&nbsp;<span>|</span>&nbsp;
+                        <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer; font-size: 12px; color:rgb(26, 24, 24);">Delete</a>
+                       </div>
                     </div>
                     <!--<div class="col-sm-6">-->
                     <!--   <div class="d-flex justify-content-end">-->

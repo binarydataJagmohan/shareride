@@ -9,6 +9,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\TripRequestController;
 use App\Http\Controllers\BookTripController;
 use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\PayPalController;
 /*
 |--------------------------------------------------------------------------
@@ -124,6 +125,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/password/change',[DashboardController::class,'save_password']);
     
     Route::post('/update-phone',[AccountController::class,'update_phoneNo']);
+    
 
     Route::get('/payment-setting',[AccountController::class,'payment_setting']);
     Route::post('/payment-store',[AccountController::class,'payment_store']);
@@ -148,6 +150,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('search-stops',[PostTripController::class,'search_stops']);
     //Route::get('travel',[DashboardController::class,'search'])->name('travels');
    Route::get('book/trip/{id}',[BookTripController::class,'index'])->name('booktrip')->middleware('auth');
+   Route::get('review/{id}',[BookTripController::class,'review'])->name('review');
+   Route::post('review/save',[BookTripController::class,'review_Save'])->name('rs');
+   Route::get('review/see',[BookTripController::class,'getRating'])->name('rc');
    Route::get('booking/{id}',[BookTripController::class,'booking'])->name('booking')->middleware(['auth','ptb']);
    Route::post('getseatprice',[BookTripController::class,'getseatprice'])->name('gsp')->middleware('auth');
    Route::post('save-booking',[BookTripController::class,'save_booking'])->middleware('auth');
