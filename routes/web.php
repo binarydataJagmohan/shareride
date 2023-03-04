@@ -10,6 +10,7 @@ use App\Http\Controllers\TripRequestController;
 use App\Http\Controllers\BookTripController;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Controllers\PayPalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -125,6 +126,17 @@ Route::middleware(['auth'])->group(function () {
     
     Route::post('/update-phone',[AccountController::class,'update_phoneNo']);
     
+
+    Route::get('/payment-setting',[AccountController::class,'payment_setting']);
+    Route::post('/payment-store',[AccountController::class,'payment_store']);
+
+    Route::get('/payouts-setting',[AccountController::class,'payouts_setting']);
+    Route::get('/payouts-method',[AccountController::class,'payouts_method']);
+
+    Route::get('/payment',[PayPalController::class,'payment'])->name('payment');
+    Route::get('/cancel',[PayPalController::class,'cancel'])->name('payment.cancel');
+    Route::get('/payment/success',[PayPalController::class,'success'])->name('payment.success');
+
     });
 
     Route::get('notification',[AccountController::class,'notification'])->middleware('auth');

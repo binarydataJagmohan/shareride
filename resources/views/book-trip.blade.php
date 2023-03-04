@@ -183,6 +183,27 @@
                              </div>
                             <div class="form-check mt-4" id="cheak">
                                 <input class="form-check-input" name="" type="checkbox" value="" id="flexCheckDefault">
+                         <div class="payment_mothod">
+                            <h3>Payment method</h3>
+                            <div class="col-md-6 text-start slect-change">
+                                <label for="" class="mb-3 mt-3">Name on card</label>
+                                <input class="form-control" id="cardholder_name" name="cardholder_name" placeholder="Enter card name" value="{{$user->cardholder_name ?? ''}}" size='4' required>
+                            </div>
+                            <div class="card-stye mt-3 mb-3">
+                                <input id="card_number" type="number" size='20' name="card_number" placeholder="XXXX XXXX XXXX XXXX" style="    width: 200px;
+                                background: transparent;
+                                border: none;" value="{{$user->card_number ?? ''}}" required>
+                                <input id="exp_month" type="text" name="exp_month" placeholder="MM/YY" style="width: 200px;background: transparent;
+                                border: none;" size='2' value="{{$user->exp_month ?? ''}}" required>
+                                <input id="exp_year" type="text" name="exp_year" placeholder="MM/YY" style="width: 200px;background: transparent;border: none;" size='4' value="{{$user->exp_year ?? ''}}" required>
+                                <input id="cvc" name="cvc" type="number" placeholder="CVC" style="width: 130px;
+                              background: transparent;
+                              border: none;
+                              color:#565a5c;" size='4' required>
+
+                            </div>
+                            <div class="form-check mt-4" id="cheak">
+                                <input class="form-check-input" name="" type="checkbox" value="" id="flexCheckDefault" required>
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Securely store my card details for next time
                                 </label>

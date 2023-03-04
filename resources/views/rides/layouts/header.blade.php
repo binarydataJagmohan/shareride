@@ -52,6 +52,9 @@ ul.ul-width li a {
 ul.link-menu.position-relative {
     margin-left: 120px;
 }
+/*ul.link-menu.position-relative {*/
+/*    margin-left: 120px;*/
+/*}*/
 li.bell img {
     width: 25px;
     margin-top: 20px;
@@ -78,6 +81,9 @@ span.position-absolute.top-0.start-100.translate-middle.badge.rounded-pill.bg-da
     position: absolute;
     top: 7px;
     left: 12px;
+}
+ul.link-menu.position-relative {
+    margin-top: -13px;
 }
 
 @media (min-width: 900px) {

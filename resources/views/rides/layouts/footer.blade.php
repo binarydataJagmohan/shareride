@@ -30,6 +30,7 @@ ul.footer-social li {
             </div>
         </div>
         <p class="online text-center pt-5">© ShareRide Online Inc. 2023 | <a href="#">Privacy</a> | <a href="#">Terms</a>
+      <p class="online text-center pt-5">© 2023-2025 Share Ride ™, all rights reserved |<a href="/privacy">Privacy</a>|<a href="/terms">Terms</a>
          </div>
         </p>
       </div>

@@ -150,6 +150,8 @@
                 <div class="nav mb-3" id="" role="tablist">
                   <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">One-time trip</button>
                   <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Recurring trip</button>
+                  <button class="nav-link active" id="nav-home-tabs" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">One-time trip</button>
+                  <!--<button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Recurring trip</button>-->
                 </div>
               </nav>
               <div class="tab-content p-3" id="nav-tabContent">
@@ -874,6 +876,7 @@
       },
       description: {
         required: true,
+        maxlength: 100,
       },
     },
     messages: {

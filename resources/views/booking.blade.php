@@ -61,6 +61,12 @@
                   <div class="rating">Rating</div>
                    </a>
                 @endif
+                   
+                </div>
+                <div class="col-sm-3 col-3">
+                    <h6>Hi {{$user->name ?? ''}}&nbsp{{$user->last_name ?? ''}}</h6>
+                    <p class="m-0">Welcome to ShareRide!</p>
+                </div>
                 <div class="row align-items-center">
                     <div class="col-sm-7" id="desh-two1">
                         <div class="text-dash">

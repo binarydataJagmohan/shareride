@@ -26,6 +26,13 @@
                           
                           <strong>{{\Carbon\Carbon::parse($ub->start_date)->format('l , F d \a\t ')}} {{\Carbon\Carbon::parse($ub->start_time)->format('H:i')}}</strong>
                           <hr>
+                         
+                          <strong>{{\Carbon\Carbon::parse($ub->start_date)->format('l , F d \a\t ')}} {{\Carbon\Carbon::parse($ub->start_time)->format('H:i')}}</strong>
+                          <hr>
+                           <p><i>seats</i>&nbsp&nbsp<b>{{ $ub-> seats }}</b></p></b><br>
+                          <p><i>Price</i>&nbsp&nbsp<b>${{ $ub->amount }}</b></b></p>
+                          <p><i></i></p>
+                          <hr>
                           @if($ub->status == 'approvered')
                           <a href="" class="clr btn btn-success">Booking Confirmed</a>
                           @elseif($ub->status == 'pending')
@@ -41,6 +48,7 @@
                           <p><i></i></p>
                           
                           <p><i></i></p>
+                          
                           
 
                         </div>

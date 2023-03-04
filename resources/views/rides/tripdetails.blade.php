@@ -11,6 +11,12 @@
 /*#dataContainer{
     display: none;
 }*/
+/*    div#hide {*/
+/*    display: none;*/
+/*}*/
+/*#dataContainer{*/
+/*   display: block;*/
+/*}*/
 #trip-info .hide {
      display: block; 
 }
@@ -65,11 +71,13 @@
                          <a href="{{url('edit?#text-ara',$trips[0]->id)}}">Edit description</a>
                          <br>
                           <!-- <a href="#" class="button-reveal-more-info" id="show_less">Less details</a> -->
+                          <!--<a href="#" class="button-reveal-more-info" id="show_less">Less details</a>-->
                     </div>
                 </div>
             </div>
             
               <!-- <a href="#" class="button-reveal-more-info" id="show_more">More details</a> -->
+              <!--<a href="#" class="button-reveal-more-info" id="show_more">More details</a>-->
             </div>
             
             @if($vehicls)
@@ -308,6 +316,7 @@
       </iframe>
   </div>
 <!--  <script>
+ <script>
        $(document).ready(function() {
         $('#show_more').click(function() {
             $('#hide').show();
@@ -323,6 +332,7 @@
         });
     });
  </script> -->
+ </script>
 
 
 

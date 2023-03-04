@@ -9,6 +9,7 @@
 
   i.fa-solid.fa-location-dot {
     font-size: 22px;
+    font-size: 20px;
   }
 
   input.stop_name.col-sm-10:focus {
@@ -31,6 +32,9 @@
     content: "\f005";
     color: #ffc107!important;
 }
+  .location .form-control{
+      padding:15px 25px !important
+  }
 </style>
 
     <div class="container position-relative">
@@ -40,6 +44,10 @@
         <div class="position-relative location">
          <!--  <i class="fa-solid fa-location-dot"></i> -->
          <i class="fa-solid fa-location-dot" style="top:unset !important;margin-top: 20px;"></i>
+      <div class="col-md-3 mt-lg-0 text-center">
+        <div class="position-relative location">
+         <!--  <i class="fa-solid fa-location-dot"></i> -->
+         <i class="fa-solid fa-location-dot" style="top:unset !important;margin: 15px -19px 10px;"></i>
           <input type="text" class="form-control" data-bs-toggle="modal" data-bs-target="#addOrigin" value="{{$origin->name ?? ''}}" style="margin-left: 10px;" placeholder="From" readonly  name="origin" id="input1"/ required>
           <input type="hidden" id="origin_value" name="origin">
         </div>
@@ -51,6 +59,10 @@
         <div class="position-relative location">
           <i class="fa-solid fa-location-dot" style="top:unset !important;margin-top: 20px;"></i>
           <input type="text" class="form-control" placeholder="To" value="{{$destination->name ?? ''}}" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#addDestination" readonly  id="input2" required/>
+      <div class="col-md-3 mt-lg-0 text-center">
+        <div class="position-relative location">
+          <i class="fa-solid fa-location-dot" style="top:unset !important;;margin: 15px -19px 10px;"></i>
+          <input type="text" class="form-control" placeholder="To" value="{{$destination->name ?? ''}}" style="margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#addDestination" readonly  id="input2" name="destination" required/>
           <input type="hidden" id="destination_value" name="destination">
         </div>
       </div>
@@ -111,6 +123,7 @@
                    <p>No reviews yet</p>
                    @endif
                  </div>
+                  <p>No ratings, yet</p>
                 </div>
               </div>
               <div class="col-md-5">
@@ -335,6 +348,28 @@ $(".search_stop").on("input", function() {
         }
         
       });
+      
+      $(document).ready(function(){
+          $('#fromclass').validate({
+              rules:{
+                  origin:{
+                      required:true,
+                  },
+                  destination:{
+                       required:true,
+                  },
+              },
+                  messages:{
+                      origin:{
+                          required:'origin  is required',
+                      },
+                      destination:{
+                          required:'destination is required',
+                      },
+                  }
+          });
+      });
+      
 </script>
 
 @endsection

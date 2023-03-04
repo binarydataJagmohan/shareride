@@ -19,6 +19,11 @@
     display: block !important;
 }
     input#acc {
+    input#first_acc {
+    padding: 20px 15px 20px 20px;
+
+}
+    input#last_acc {
     padding: 20px 15px 20px 20px;
 
 }
@@ -58,17 +63,22 @@
           </div>
           <hr class="hr-line">
            <form method="post" action="{{ url('update-account') }}">
+           <form method="post" action="{{ url('update-account') }}" id="accform">
             @csrf
            <div class="col-md-4 position-relative location">
             <label for="">First Name</label>
             
             <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="" data-bs-toggle="modal"
               data-bs-target="#exampleModal4" id="acc">
+              data-bs-target="#exampleModal4" id="first_acc" required maxlength="21">
+              <div id="error-message" style="color: red;"></div>
           </div>
           <div class="col-md-4 position-relative location">
             <label for="">Last Name</label>
             <input type="text" name="last_name" value="{{ $user->last_name }}" class="form-control" placeholder="" data-bs-toggle="modal"
               data-bs-target="#exampleModal4" id="acc">
+              data-bs-target="#exampleModal4" id="last_acc"  required maxlength="21">
+              <div id="error-message1" style="color: red;"></div>
           </div>
           @php
             $dob_month = $newDate = date('m', strtotime($user->dob));
@@ -112,6 +122,8 @@
             <div class="form-floating">
               <textarea class="form-control" name="description" placeholder="Leave a comment here" id="floatingTextarea">{{ $user->description }}</textarea>
               
+              <textarea class="form-control"  name="description" placeholder="Leave a comment here" id="floatingTextarea" maxlength="100">{{ $user->description }}</textarea>
+              <div id="error-message2" style="color: red;"></div>
             </div>
           </div>
           <div class="row" id="selectclass">
@@ -158,6 +170,12 @@
         <div class="row mt-5 mb-5">
           <div class="col-sm-6">
             <input type="number" name="number" value="{{ $user->mobile_no ?? "" }}" class="form-control" placeholder="3655646565846">
+      <div class="modal-body" style="padding: 18px;" id="accform">
+        <p>Please enter your phone number with a valid country code</p>
+        <div class="row mt-5 mb-5">
+          <div class="col-sm-6">
+            <input type="number" name="number" value="{{ $user->mobile_no ?? "" }}" class="form-control" placeholder="3655646565846" id="number" onKeyPress="if(this.value.length==21) return false;">
+              <div id="error-message4" style="color: red;"></div>
           </div>
           <div class="col-sm-6">
             <button type="submit" class="button darkgrey" id="trip-post-button" style="margin-top: 0px;">Update</button>
@@ -172,11 +190,21 @@
 </section>
 
  <script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+<script>
       document.getElementById("upload-image").addEventListener("click", function () {
              document.getElementById("file_input").click();
             });
             
     $(document).ready(function () {
+        $('#number').on('input', function(){
+            var number = $('#number').val();
+            if(number.length > 20){
+                $('#error-message4').text('Maximum length is 20 numbers.');
+            }
+        })
         $(".trip-post-button").click(function(){
             document.getElementById("file_input").click();
         })
@@ -199,5 +227,51 @@
 });
     
     </script>
+    <script>
+    $(document).ready(function() {
+        $('#first_acc').on('input', function() {
+    var inputValue = $('#first_acc').val();
+    if (inputValue.length > 20) {
+      $('#error-message').text('Maximum length is 20 characters.');
+    }
+  });
+       $('#last_acc').on('input', function() {
+    var inputValue1 = $('#last_acc').val();
+    if (inputValue1.length > 20) {
+      $('#error-message1').text('Maximum length is 20 characters.');
+    }
+  });
+        $('#floatingTextarea').on('input', function() {
+    var inputValue2 = $(this).val();
+    if (inputValue2.length > 100) {
+      $('#error-message2').text('Maximum length is 100 characters.');
+    }
+  });
+  $("#accform").validate({
+    rules: {
+      first_acc: {
+        required: true,
+      },
+       last_acc: {
+        required: true,
+      },
+      floatingTextarea: {
+        required: true,
+      },
+    },
+    messages: {
+      first_acc: {
+        required: "Please enter your name",
+      },
+      last_acc:{
+          required: "Please enter last name",
+      },
+      floatingTextarea: {
+        required: 'Please enter  the description',
+      },
+    },
+  });
+    });
+</script>
 
 @endsection
